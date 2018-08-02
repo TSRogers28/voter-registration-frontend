@@ -1,0 +1,20 @@
+<ion-header no-border>
+
+  <ion-navbar transparent>
+    <ion-item>
+      <ion-searchbar [(ngModel)]="autocomplete.query" [showCancelButton]="true" (ionInput)="updateSearch()" (ionCancel)="dismiss()"></ion-searchbar>
+      <ion-list>
+        <ion-item *ngFor="let item of autocompleteItems" tappable (click)="chooseItem(item)">
+          {{ item }}
+        </ion-item>
+      </ion-list>
+      <ion-buttons>
+        <button ion-button (click)="addMarker()">Verify</button>
+      </ion-buttons>
+    </ion-item>
+  </ion-navbar>
+</ion-header>
+
+<ion-content transparent>
+  <div #map style="height: 130%"></div>
+</ion-content>

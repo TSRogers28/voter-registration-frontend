@@ -1,0 +1,11 @@
+<ion-menu [content]="content">
+
+<ion-content padding>
+  <ion-list>
+    <button menuClose ion-item (click)="goHome">Home</button>
+    <button menuClose ion-item (click)="goToElectionInformation">Election Infokrmation</button>
+
+  </ion-list>
+</ion-content>
+</ion-menu>
+<ion-nav [root]="rootPage" #content></ion-nav>

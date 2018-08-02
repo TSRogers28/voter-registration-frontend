@@ -1,0 +1,33 @@
+<ion-header no-border>
+
+  <ion-navbar transparent>
+    <ion-buttons align-items-start="">
+      <button ion-button  icon-only  menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="lol" [fullscreen]="true">
+  <h2>State of Delaware</h2>
+
+  <p>
+    This starter project comes with simple tabs-based layout for apps
+    that are going to primarily use a Tabbed UI.
+  </p>
+  <p>
+    Take a look at the <code>src/pages/</code> directory to add or change tabs,
+    update any existing page or create new pages.
+  </p>
+  <!-- <img src="../../assets/imgs/suburbs.jpg"> -->
+
+  <button ion-button (click)="goToRegistration()">Registration</button>
+
+  <button ion-button (click)="goToElectionInformation()">Election Information</button>
+
+  <button ion-button (click)="goToMapPage()">Map</button>
+
+
+</ion-content>
