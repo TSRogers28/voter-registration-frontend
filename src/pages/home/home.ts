@@ -10,11 +10,12 @@ import {MapPage} from "../map/map";
 export class HomePage {
   @ViewChild('map') mapRef: ElementRef;
 
+
   constructor(public navCtrl: NavController) {
 
   }
   goToRegistration(){
-    window.open('https://ivote.de.gov/voterregterms.aspx', '_self')
+    window.open('https://ivote.de.gov/voterregterms.aspx', '_self', 'location=yes')
   }
 
   goToElectionInformation(){

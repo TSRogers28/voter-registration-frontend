@@ -1,3 +1,13 @@
+
+<ion-menu [content]="content">
+  <ion-content padding>
+    <ion-list>
+      <button menuClose ion-item (click)="goHome">News</button>
+      <button menuClose ion-item (click)="goToElectionInformation">Election Information</button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
 <ion-header no-border>
 
   <ion-navbar transparent>
@@ -9,25 +19,20 @@
     <ion-title></ion-title>
   </ion-navbar>
 </ion-header>
-
 <ion-content padding class="lol" [fullscreen]="true">
   <h2>State of Delaware</h2>
-
   <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
+    Delaware had been the first state to embrace the Union by ratifying the constitution, and would be the last to leave it - William Burton
   </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
-  <!-- <img src="../../assets/imgs/suburbs.jpg"> -->
-
+  <div text-center>
   <button ion-button (click)="goToRegistration()">Registration</button>
-
+  </div>
+  <div text-center>
   <button ion-button (click)="goToElectionInformation()">Election Information</button>
-
-  <button ion-button (click)="goToMapPage()">Map</button>
-
-
+  </div>
+  <div text-center>
+    <button ion-button  (click)="goToMapPage()">Map</button>
+  </div>
 </ion-content>
+
+<ion-nav [root]="rootPage" #content></ion-nav>

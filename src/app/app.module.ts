@@ -21,6 +21,7 @@ import { GooglePlacesAutocompleteComponentModule } from 'ionic2-google-places-au
 import {AutocompletePage} from "../pages/AutoCompletePage/auto-complete-page";
 
 
+
 @NgModule({
   declarations: [
     MyApp,
@@ -29,7 +30,6 @@ import {AutocompletePage} from "../pages/AutoCompletePage/auto-complete-page";
     RegisterPage,
     AutocompletePage,
     HomePage,
-
     PollingPlacesPage,
     ElectionInformationPage,
     TabsPage
@@ -56,7 +56,6 @@ import {AutocompletePage} from "../pages/AutoCompletePage/auto-complete-page";
     StatusBar,
     SplashScreen,
     GoogleMaps,
-    Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
   ]
 })

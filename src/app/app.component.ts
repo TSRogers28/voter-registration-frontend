@@ -6,7 +6,15 @@ import { TabsPage } from '../pages/tabs/tabs';
 import {HomePage} from "../pages/home/home";
 import {ElectionInformationPage} from "../pages/election-information/election-information";
 import {MapPage} from "../pages/map/map";
+import * as firebase from 'firebase';
 
+const config = {
+  apiKey: 'AIzaSyBLB1oRzLu-ydQdroSKI91dmTve1zmNprg',
+  authDomain: 'voterregistration.firebaseapp.com',
+  databaseURL: 'https://voterregistration.firebaseio.com/',
+  projectId: 'voterregistration',
+  storageBucket: 'voterregistration.appspot.com',
+};
 
 @Component({
   templateUrl: 'app.html'
@@ -22,6 +30,7 @@ export class MyApp {
       statusBar.styleDefault();
       splashScreen.hide();
     });
+    firebase.initializeApp(config);
   }
   goHome(){
     this.nav.push(HomePage);
