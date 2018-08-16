@@ -10,9 +10,9 @@ import {AutocompletePage} from "../AutoCompletePage/auto-complete-page";
 })
 export class MapPage {
   @ViewChild('map')
-  private mapElement:ElementRef;
-  private map:GoogleMap;
-  private location:LatLng;
+  private mapElement: ElementRef;
+  private map: GoogleMap;
+  private location: LatLng;
 
 
   address;
@@ -23,23 +23,24 @@ export class MapPage {
 
   service = new google.maps.places.AutocompleteService();
 
-  constructor(private platform:Platform,
-              private googleMaps:GoogleMaps,
+  constructor(private platform: Platform,
+              private googleMaps: GoogleMaps,
               private navCtrl: NavController,
               private modalCtrl: ModalController,
               public viewCtrl: ViewController,
               private zone: NgZone
-              ) {
+  ) {
     this.address = {
-       place: ''
-     };
-     this.autocompleteItems = [];
-     this.autocomplete = {
-       query: ''};
+      place: ''
+    };
+    this.autocompleteItems = [];
+    this.autocomplete = {
+      query: ''
+    };
     this.location = new LatLng(39.1582, -75.5244)
   }
 
-  ionViewDidLoad(){
+  ionViewDidLoad() {
     // this.geolocation.getCurrentPosition(function(position){
     //   var pos = {
     // lat: position.coords.latitude,
@@ -56,7 +57,7 @@ export class MapPage {
     //     mapTypeId: google.maps.MapTypeId.ROADMAP
     //   }
 
-    this.platform.ready().then(()=> {
+    this.platform.ready().then(() => {
       let element = this.mapElement.nativeElement;
       this.map = this.googleMaps.create(element);
 
@@ -75,7 +76,7 @@ export class MapPage {
 
   }
 
-  showAddressModal () {
+  showAddressModal() {
     let modal = this.modalCtrl.create(AutocompletePage);
     let me = this;
     modal.onDidDismiss(data => {
@@ -95,12 +96,14 @@ export class MapPage {
       this.autocompleteItems = [];
       return;
     }
-  // //convert Address string to lat and long
-  // geoCode(address:any) {
-  //   let geocoder = new google.maps.Geocoder();
-  //   geocoder.geocode({ 'address': address }, (results, status) => {
-  //     this.latitude = results[0].geometry.location.lat();
-  //     this.longitude = results[0].geometry.location.lng();
-  //   });
-  // }
+    // //convert Address string to lat and long
+    // geoCode(address:any) {
+    //   let geocoder = new google.maps.Geocoder();
+    //   geocoder.geocode({ 'address': address }, (results, status) => {
+    //     this.latitude = results[0].geometry.location.lat();
+    //     this.longitude = results[0].geometry.location.lng();
+    //   });
+    // }
+  }
+
 }
