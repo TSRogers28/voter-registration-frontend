@@ -19,6 +19,8 @@ import {MapPageModule} from "../pages/map/map.module";
 import {GoogleMaps} from "@ionic-native/google-maps";
 import { GooglePlacesAutocompleteComponentModule } from 'ionic2-google-places-autocomplete';
 import {AutocompletePage} from "../pages/AutoCompletePage/auto-complete-page";
+import { InAppBrowser } from '@ionic-native/in-app-browser';
+
 
 
 
@@ -56,6 +58,8 @@ import {AutocompletePage} from "../pages/AutoCompletePage/auto-complete-page";
     StatusBar,
     SplashScreen,
     GoogleMaps,
+    InAppBrowser,
+
     {provide: ErrorHandler, useClass: IonicErrorHandler},
   ]
 })
