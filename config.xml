@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.ionic3.googlemaps" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>anotherAttempt</name>
@@ -97,4 +95,3 @@
     <engine name="ios" spec="4.5.4" />
     <engine name="android" spec="^7.1.1" />
 </widget>
->>>>>>> 2b67534
