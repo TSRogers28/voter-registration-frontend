@@ -5,7 +5,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { TabsPage } from '../pages/tabs/tabs';
 import {HomePage} from "../pages/home/home";
 import {ElectionInformationPage} from "../pages/election-information/election-information";
-import {MapPage} from "../pages/map/map";
 import * as firebase from 'firebase';
 
 const config = {
