@@ -2,20 +2,35 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
 import { NavController} from 'ionic-angular';
 import {ElectionInformationPage} from "../election-information/election-information";
 import {MapPage} from "../map/map";
+import { InAppBrowser, InAppBrowserOptions } from '@ionic-native/in-app-browser';
+
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html',
 })
 export class HomePage {
-  @ViewChild('map') mapRef: ElementRef;
+  options : InAppBrowserOptions = {
+    location : 'yes',//Or 'no'
+    hidden : 'no', //Or  'yes'
+    clearcache : 'yes',
+    clearsessioncache : 'yes',
+    zoom : 'yes',//Android only ,shows browser zoom controls
+    hardwareback : 'yes',
+    mediaPlaybackRequiresUserAction : 'no',
+    shouldPauseOnSuspend : 'no', //Android only
+    closebuttoncaption : 'Close', //iOS only
+    disallowoverscroll : 'no', //iOS only
+    toolbar : 'yes', //iOS only
+    enableViewportScale : 'no', //iOS only
+    allowInlineMediaPlayback : 'no',//iOS only
+    presentationstyle : 'pagesheet',//iOS only
+    fullscreen : 'yes',//Windows only
+  };
 
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, private theInAppBrowser: InAppBrowser) {
 
-  }
-  goToRegistration(){
-    window.open('https://ivote.de.gov/voterregterms.aspx', '_self', 'location=yes')
   }
 
   goToElectionInformation(){
@@ -26,12 +41,8 @@ export class HomePage {
     this.navCtrl.push(MapPage);
   }
 
-  ionViewDidLoad() {
-    console.log(this.mapRef);
+  public openWithInAppBrowser(url : string){
+    let target = "_blank";
+    this.theInAppBrowser.create(url,target,this.options);
   }
-
-
-
-
-
 }
