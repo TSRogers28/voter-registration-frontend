@@ -1,23 +1,18 @@
-import {Component} from "@angular/core";
-import {NavController} from "ionic-angular";
-import {PollingPlacesPage} from "../polling-places/polling-places";
+import { Component } from '@angular/core';
+import {IonicPage, NavController, NavParams } from 'ionic-angular';
 
+@IonicPage()
 @Component({
-  selector: 'login',
+  selector: 'page-login',
   templateUrl: 'login.html',
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ElectionInformationPage');
+  doLogin(){
+    this.navCtrl.setRoot('tabs-page');
   }
 
-  doLogin() {
-    this.navCtrl.setRoot('TabsPage');
-  }
-
-
-  }
+}
