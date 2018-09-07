@@ -11,7 +11,6 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 
 import { HomePage } from '../pages/home/home';
-import { TabsPage } from '../pages/tabs/tabs';
 import { RegisterPage } from '../pages/register/register';
 import {ElectionInformationPage} from "../pages/election-information/election-information";
 import {PollingPlacesPage} from "../pages/polling-places/polling-places";
@@ -20,6 +19,7 @@ import {GoogleMaps} from "@ionic-native/google-maps";
 import { GooglePlacesAutocompleteComponentModule } from 'ionic2-google-places-autocomplete';
 import {AutocompletePage} from "../pages/AutoCompletePage/auto-complete-page";
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+import {LoginPage} from "../pages/login/login";
 
 
 
@@ -31,10 +31,10 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
     ContactPage,
     RegisterPage,
     AutocompletePage,
-    HomePage,
     PollingPlacesPage,
+    LoginPage,
+    HomePage,
     ElectionInformationPage,
-    TabsPage
   ],
   imports: [
     BrowserModule,
@@ -49,10 +49,10 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
     ContactPage,
     RegisterPage,
     AutocompletePage,
-    HomePage,
     PollingPlacesPage,
+    LoginPage,
+    HomePage,
     ElectionInformationPage,
-    TabsPage
   ],
   providers: [
     StatusBar,

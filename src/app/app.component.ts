@@ -6,6 +6,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import {HomePage} from "../pages/home/home";
 import {ElectionInformationPage} from "../pages/election-information/election-information";
 import * as firebase from 'firebase';
+import {LoginPage} from "../pages/login/login";
 
 const config = {
   apiKey: 'AIzaSyBLB1oRzLu-ydQdroSKI91dmTve1zmNprg',
@@ -19,7 +20,7 @@ const config = {
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = TabsPage;
+  rootPage:any = LoginPage;
   @ViewChild(Nav) nav;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
