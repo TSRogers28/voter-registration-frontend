@@ -1,10 +1,10 @@
 
 <ion-menu [content]="content">
   <ion-content padding>
-    <ion-list>
-      <button menuClose ion-item (click)="goHome">News</button>
-      <button menuClose ion-item (click)="goToElectionInformation">Election Information</button>
-    </ion-list>
+    <!--<ion-list>-->
+      <!--<button menuClose ion-item (click)="goHome">News</button>-->
+      <!--<button menuClose ion-item (click)="goToElectionInformation">Election Information</button>-->
+    <!--</ion-list>-->
   </ion-content>
 </ion-menu>
 
@@ -35,4 +35,4 @@
   </div>
 </ion-content>
 
-<ion-nav [root]="rootPage" #content></ion-nav>
+<ion-nav [root]="rootPage" #content [swipeBackEnabled]="false"></ion-nav>

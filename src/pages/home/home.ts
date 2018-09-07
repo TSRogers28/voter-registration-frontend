@@ -42,7 +42,9 @@ export class HomePage {
   }
 
   public openWithInAppBrowser(url : string){
-    let target = "_blank";
+    let target = "_system";
     this.theInAppBrowser.create(url,target,this.options);
   }
+
+
 }

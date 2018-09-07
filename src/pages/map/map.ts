@@ -64,7 +64,7 @@ export class MapPage {
       this.map.one(GoogleMapsEvent.MAP_READY).then(() => {
         let options = {
           target: this.location,
-          zoom: 9
+          zoom: 8
         };
 
         //this.map.addEventListener()
