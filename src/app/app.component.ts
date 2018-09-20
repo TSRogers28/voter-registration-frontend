@@ -4,23 +4,17 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {HomePage} from "../pages/home/home";
 import {ElectionInformationPage} from "../pages/election-information/election-information";
-import * as firebase from 'firebase';
 import {LoginPage} from "../pages/login/login";
-
-const config = {
-  apiKey: 'AIzaSyBLB1oRzLu-ydQdroSKI91dmTve1zmNprg',
-  authDomain: 'voterregistration.firebaseapp.com',
-  databaseURL: 'https://voterregistration.firebaseio.com/',
-  projectId: 'voterregistration',
-  storageBucket: 'voterregistration.appspot.com',
-};
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = LoginPage;
   @ViewChild(Nav) nav;
+
+  rootPage:any = LoginPage;
+
+  pages: Array<{title: string, component: any}>;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
@@ -29,14 +23,17 @@ export class MyApp {
       statusBar.styleDefault();
       splashScreen.hide();
     });
-    firebase.initializeApp(config);
+
+    this.pages = [
+      { title: 'Home', component: HomePage },
+      { title: 'Election Information', component: ElectionInformationPage }
+    ];
   }
-  goHome(){
-    this.nav.push(HomePage);
+
+  openPage(page){
+    this.nav.setRoot(page.component);
   }
-  goToElectionInformation(){
-    this.nav.push(ElectionInformationPage);
-  }
+
 
 
 

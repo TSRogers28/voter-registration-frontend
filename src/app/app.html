@@ -2,8 +2,9 @@
 <ion-content padding>
   <h4>Quick Links</h4>
   <ion-list>
-    <button menuClose ion-item (click)="goHome">News</button>
-    <button menuClose ion-item (click)="goToElectionInformation">Election Information</button>
+    <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+      {{p.title}}
+    </button>
   </ion-list>
 </ion-content>
 </ion-menu>
