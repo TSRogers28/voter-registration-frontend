@@ -34,6 +34,10 @@ export class MyApp {
     this.nav.setRoot(page.component);
   }
 
+  logout() {
+    this.nav.setRoot(LoginPage);
+  }
+
 
 
 

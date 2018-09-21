@@ -20,6 +20,8 @@ import { GooglePlacesAutocompleteComponentModule } from 'ionic2-google-places-au
 import {AutocompletePage} from "../pages/AutoCompletePage/auto-complete-page";
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import {LoginPage} from "../pages/login/login";
+import { AuthenticationServiceProvider } from '../providers/authentication-service/authentication-service';
+// import { AuthenticationService } from '../providers/authentication-service';
 
 
 
@@ -59,8 +61,10 @@ import {LoginPage} from "../pages/login/login";
     SplashScreen,
     GoogleMaps,
     InAppBrowser,
+    //AuthenticationService,
 
     {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AuthenticationServiceProvider,
   ]
 })
 export class AppModule {}
