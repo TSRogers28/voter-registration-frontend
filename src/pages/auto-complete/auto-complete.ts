@@ -1,12 +1,21 @@
-import {Component, NgZone} from '@angular/core';
-import {ViewController} from 'ionic-angular';
+import { Component, NgZone } from '@angular/core';
+import {  ViewController } from 'ionic-angular';
 declare var google: any;
 
-@Component({
-  templateUrl: 'auto-complete-page.html'
-})
 
-export class AutocompletePage {
+/**
+ * Generated class for the AutoCompletePage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+
+@Component({
+  selector: 'page-auto-complete',
+  templateUrl: 'auto-complete.html',
+})
+export class AutoCompletePage {
+
   autocompleteItems;
   autocomplete;
 
@@ -27,11 +36,11 @@ export class AutocompletePage {
     this.viewCtrl.dismiss();
   }
 
-  chooseItem(item: any) {
-    this.viewCtrl.dismiss(item);
-    this.geo = item;
-    this.geoCode(this.geo);//convert Address to lat and long
-  }
+  // chooseItem(item: any) {
+  //   this.viewCtrl.dismiss(item);
+  //   this.geo = item;
+  //   this.geoCode(this.geo);//convert Address to lat and long
+  // }
 
   updateSearch() {
 
@@ -60,11 +69,12 @@ export class AutocompletePage {
   }
 
   //convert Address string to lat and long
-  geoCode(address:any) {
-    let geocoder = new google.maps.Geocoder();
-    geocoder.geocode({ 'address': address }, (results, status) => {
-      this.latitude = results[0].geometry.location.lat();
-      this.longitude = results[0].geometry.location.lng();
-    });
-  }
+  // geoCode(address:any) {
+  //   let geocoder = new google.maps.Geocoder();
+  //   geocoder.geocode({ 'address': address }, (results, status) => {
+  //     this.latitude = results[0].geometry.location.lat();
+  //     this.longitude = results[0].geometry.location.lng();
+  //   });
+  // }
+
 }

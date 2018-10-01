@@ -2,7 +2,7 @@ import {NavController, ModalController, Platform} from 'ionic-angular';
 import {Component, ElementRef, NgZone, ViewChild} from '@angular/core';
 import {ViewController} from 'ionic-angular';
 import {GoogleMap, GoogleMaps, GoogleMapsEvent, LatLng} from "@ionic-native/google-maps";
-import {AutocompletePage} from "../AutoCompletePage/auto-complete-page";
+import { AutoCompletePage } from '../auto-complete/auto-complete';
 
 @Component({
   selector: 'page-map',
@@ -13,7 +13,6 @@ export class MapPage {
   private mapElement: ElementRef;
   private map: GoogleMap;
   private location: LatLng;
-
 
   address;
   autocompleteItems;
@@ -77,7 +76,7 @@ export class MapPage {
   }
 
   showAddressModal() {
-    let modal = this.modalCtrl.create(AutocompletePage);
+    let modal = this.modalCtrl.create(AutoCompletePage);
     let me = this;
     modal.onDidDismiss(data => {
       this.address.place = data;
@@ -96,6 +95,23 @@ export class MapPage {
       this.autocompleteItems = [];
       return;
     }
+
+    let me = this;
+    this.service.getPlacePredictions({ input: this.autocomplete.query,
+      componentRestrictions: {
+        country: 'us'
+      }
+    }, (predictions, status) => {
+      me.autocompleteItems = [];
+      me.zone.run(() => {
+        if (predictions != null) {
+          predictions.forEach((prediction) => {
+            me.autocompleteItems.push(prediction);
+          });
+        }
+      });
+    });
+  }
     // //convert Address string to lat and long
     // geoCode(address:any) {
     //   let geocoder = new google.maps.Geocoder();
@@ -104,6 +120,6 @@ export class MapPage {
     //     this.longitude = results[0].geometry.location.lng();
     //   });
     // }
-  }
+  
 
 }

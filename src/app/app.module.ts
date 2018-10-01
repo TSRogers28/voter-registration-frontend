@@ -17,10 +17,10 @@ import {PollingPlacesPage} from "../pages/polling-places/polling-places";
 import {MapPageModule} from "../pages/map/map.module";
 import {GoogleMaps} from "@ionic-native/google-maps";
 import { GooglePlacesAutocompleteComponentModule } from 'ionic2-google-places-autocomplete';
-import {AutocompletePage} from "../pages/AutoCompletePage/auto-complete-page";
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import {LoginPage} from "../pages/login/login";
 import { AuthenticationServiceProvider } from '../providers/authentication-service/authentication-service';
+import { AutoCompletePage } from '../pages/auto-complete/auto-complete';
 // import { AuthenticationService } from '../providers/authentication-service';
 
 
@@ -32,9 +32,9 @@ import { AuthenticationServiceProvider } from '../providers/authentication-servi
     AboutPage,
     ContactPage,
     RegisterPage,
-    AutocompletePage,
     PollingPlacesPage,
     LoginPage,
+    AutoCompletePage,
     HomePage,
     ElectionInformationPage,
   ],
@@ -50,8 +50,8 @@ import { AuthenticationServiceProvider } from '../providers/authentication-servi
     AboutPage,
     ContactPage,
     RegisterPage,
-    AutocompletePage,
     PollingPlacesPage,
+    AutoCompletePage,
     LoginPage,
     HomePage,
     ElectionInformationPage,
